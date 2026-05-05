@@ -10,8 +10,10 @@ CORS(app)
 app.secret_key = 'bhardwaj_admin_secure_key_123'
 app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 
-ADMIN_USER = 'admin'
-ADMIN_PASS = 'lawyer123'
+
+SECRET_KEY = os.environ.get('FLASK_SECRET_KEY', 'dev_default_secret_key')
+ADMIN_USER = os.environ.get('ADMIN_USER', 'admin')
+ADMIN_PASS = os.environ.get('ADMIN_PASS', 'lawyer123')
 
 DB_FILE = 'database.db'
 
